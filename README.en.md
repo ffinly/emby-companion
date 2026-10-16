@@ -14,6 +14,12 @@ Emby Companion is a macOS app that connects movie and TV lists, TMDB search, you
 
 This repository provides releases, documentation, and issue tracking. The app is closed source and does not provide media, server accounts, or third-party credentials.
 
+## Interface Preview
+
+![Emby Companion: list filters and poster wall](assets/images/poster-wall.en.png)
+
+*Browse movie and TV lists, filter titles, and check availability in your Emby library.*
+
 ## Main Features
 
 - **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [emby-collection-sync](https://github.com/ffinly/emby-collection-sync); add TMDB lists or create your own local lists.

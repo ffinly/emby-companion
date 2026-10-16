@@ -14,6 +14,12 @@ Emby 观影助手是一款 macOS 应用，将影视榜单、TMDB 搜索、Emby �
 
 本仓库提供安装包、使用说明与问题反馈；应用闭源，不提供影视资源、服务器账号或第三方服务凭证。
 
+## 界面预览
+
+![Emby 观影助手：榜单筛选与海报墙](assets/images/poster-wall.zh-CN.png)
+
+*浏览影视榜单，筛选作品并查看 Emby 入库状态。*
+
 ## 主要功能
 
 - **榜单发现**：浏览 IMDb、豆瓣、TMDB、影展与奖项等榜单，查看排名和入库状态；从作品详情查看收录它的榜单。预置榜单随 [emby-collection-sync](https://github.com/ffinly/emby-collection-sync) 更新，也可添加 TMDB 片单或创建个人片单。
