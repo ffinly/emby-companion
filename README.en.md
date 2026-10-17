@@ -6,7 +6,7 @@
 
 ---
 
-**Discover titles, browse your library, play, and subscribe**
+**Elegantly Explore, Subscribe, and Play Your Emby Library**
 
 Emby Companion is a macOS app that connects movie and TV lists, TMDB search, your Emby library, and MoviePilot subscriptions. Discover titles, check library availability, launch an external player, and sync playback progress from one app.
 
@@ -22,13 +22,13 @@ This repository provides releases, documentation, and issue tracking. The app is
 
 ## Main Features
 
-- **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [emby-collection-sync](https://github.com/ffinly/emby-collection-sync); add TMDB lists or create your own local lists.
-- **Search titles and people:** Search by title, person, or TMDB ID. Browse overviews, ratings, credits, and filmographies, with links to Douban, IMDb, and TMDB.
+- **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [emby-collection-sync](https://github.com/ffinly/emby-collection-sync/blob/main/README.en.md); import online lists through “Add TMDB List.”
+- **Search titles and people:** Search by title, person, collection name, or ID, including TMDB and IMDb IDs and title links. Leave the title blank to browse popular titles in the selected region. Browse overviews, ratings, credits, and filmographies, with links to Douban, IMDb, and TMDB.
 - **Browse your library:** Explore Emby movies, TV shows, collections, seasons, episodes, and playable versions. Manage watch states or temporarily hide watch history and progress.
-- **Check availability and missing episodes:** Use synchronized Emby data to check library status and compare TMDB episode counts with actual Emby episode numbers by season. Unchecked seasons and unknown totals are identified separately.
+- **Check availability and missing episodes:** Use synchronized Emby data to check library status and compare TMDB episode counts with actual Emby episode numbers by season. Unchecked seasons and unknown totals are identified separately. Checking missing episodes works without MoviePilot; subscribing requires it.
 - **Core List Coverage:** Includes tiers 1–3 by default. Select tiers or include and exclude individual lists, then save to update deduplicated statistics. The home page's total unique titles and in-library count still cover all lists.
 - **MoviePilot integration:** Subscribe to missing movies or incomplete seasons, skipping available movies, complete seasons, and existing subscriptions. Search and manage subscriptions individually or in batches. MoviePilot is optional and handles downloads and library imports.
-- **Multiple routes and external players:** Set separate synchronization and playback routes for the same Emby server. Choose a media version and launch SenPlayer, Infuse, or VidHub, with resume playback and progress callbacks.
+- **Multiple routes and external players:** Set separate synchronization and playback routes for the same Emby server. Choose a media version and launch SenPlayer, Infuse, or VidHub, with resume playback and progress callbacks. Split movies show labels such as `PART 1` and `DISC 2`, with matching files sorted numerically or alphabetically. Each part keeps its own progress; full-length versions still sync progress with one another.
 - **Metadata and image caches:** A full library sync fetches TMDB title, person, and full-season episode metadata in your selected language. Images load on demand. Inspect sync results, retry failures, manage caches, or rebuild the local search index.
 - **Backup and restore:** Choose configuration, lists, caches, and preferences for encrypted export and selective restore.
 
@@ -51,23 +51,29 @@ The current package is locally signed and has no Apple Developer ID signature or
 ### Connect Your Services
 
 1. Enter your Emby address and sign in under “Connections & Settings.”
-2. Request your own key in [TMDB API settings](https://www.themoviedb.org/settings/api), read the [API terms](https://www.themoviedb.org/api-terms-of-use), and enter the key in the app. Configure an HTTP or SOCKS proxy for TMDB if needed.
+2. Request your own key in [TMDB API settings](https://www.themoviedb.org/settings/api), read the [API terms](https://www.themoviedb.org/api-terms-of-use), and enter the key in the app. Configure an HTTP or SOCKS proxy if needed for TMDB metadata, images, lists, and software updates from GitHub; Emby and MoviePilot connect directly.
 3. Run “Full Library Sync” and synchronize lists from the home page, where you can follow progress and results.
 4. Install an external player. For subscriptions, also enter your MoviePilot address and API token, available under MoviePilot's “Settings → System → Basic Settings.”
+
+TMDB and MoviePilot each offer “Clear configuration.” Clearing TMDB API settings keeps the proxy. Signing out of Emby clears its address, account, token, and all route settings.
 
 <a id="en-emby-routes-and-players"></a>
 
 ## Routes and Players
 
-Routes for the same server and account share the library cache. Set the main synchronization route and default playback route separately, or preview and import settings through an `ecplayer://importserver` link. See “Emby Routes → Import Emby from a Link” in the app for its format.
+After signing in, add and manage routes under “Connections & Settings → Emby → Multiple Connections.” Routes for the same server and account share the library cache. Set the main synchronization route and default playback route separately, or preview and import settings through an `ecplayer://importserver` link. See “Emby Routes → Import Emby from a Link” in the app for its format.
 
-| External Player | Versions Supporting Progress Callbacks |
+| External Player | Versions Supporting Progress Callbacks When the Playback Window Closes |
 | --- | --- |
 | SenPlayer | 6.1.1 or later |
 | Infuse | 8.4.7 or later |
 | VidHub | 2.3.5 or later |
 
-Enable “Sync Progress After Playback” and close the player's playback page normally. Once a callback arrives, the app syncs progress to Emby. Force-quitting or receiving no callback prevents that callback from updating progress. If a network error prevents synchronization, retry from the home page. Players must be installed separately; callbacks depend on their version and the data returned.
+Playback progress syncs automatically, with no switch to enable. **When you finish watching, close the playback window and wait for progress to sync before quitting the player. Quitting the player directly does not sync playback progress.** The app uses only the actual position returned by the player and never estimates progress without a valid callback. If a network error prevents synchronization, retry from the home page. Players must be installed separately.
+
+Keep this app running during playback to maintain the Emby session and playback history. Closing this app’s window keeps heartbeats running; quitting this app or detecting that the player has exited stops them. Valid progress callbacks that arrive later can still be received.
+
+Open “Connections & Settings → Playback → Playback Logs” to inspect player launches, heartbeats, callbacks, and synchronization. Filter, search, view records by playback request, or export `.log` files. Records and expanded ping details load automatically as you scroll. Successful pings are hidden by default and grouped in the full view. Logs stay on this device for up to seven days and 20,000 entries, excluding playback links and credentials.
 
 ## Software Updates
 
@@ -77,13 +83,13 @@ Multilingual release notes follow the current interface language. Older notes av
 
 ## Caches and Backups
 
-“Connections & Settings” provides cache cleanup, local search index rebuilding, and encrypted backups. Clearing local caches does not delete Emby server content. Connection and sign-in information remain, and you can synchronize again afterward.
+“Connections & Settings” provides cache cleanup, local search index rebuilding, and encrypted backups. Clearing local caches does not delete Emby server content. Connection and sign-in information remain, and you can synchronize again afterward. “TMDB Cache Cleanup” can clear search result caches separately while keeping lists, library metadata, and images.
 
 | Backup Component | Included Data |
 | --- | --- |
 | TMDB API Configuration | API address and API Key |
 | MoviePilot API Configuration | Service address and API token |
-| TMDB Lists | List contents, local lists, list settings, and core list selection |
+| TMDB Lists | List contents, custom TMDB lists, list settings, and core list selection |
 | TMDB Cache | Title and person metadata, posters, and person images |
 | Emby Configuration | Server, routes, current account, sign-in token, and watch history |
 | Emby Cache | Library, collections, episodes, and Emby images |
