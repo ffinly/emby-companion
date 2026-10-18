@@ -10,11 +10,17 @@
 
 Emby 观影助手是一款 macOS 应用，将影视榜单、TMDB 搜索、Emby 媒体库与 MoviePilot 订阅连接起来。从找片、核对入库，到外部播放与进度同步，在一个应用里完成。
 
+**没有 Emby 服务器也可以用。** 配置自己的 TMDB API Key，即可浏览榜单与厂牌作品、搜索影视与人物，查看评分、简介和作品集。入库对比、缺集核对及播放进度同步等功能需要连接 Emby。
+
 [下载最新版](https://github.com/ffinly/emby-companion/releases/latest) · [版本记录](https://github.com/ffinly/emby-companion/releases) · [反馈问题](https://github.com/ffinly/emby-companion/issues)
 
 本仓库提供安装包、使用说明与问题反馈；应用闭源，不提供影视资源、服务器账号或第三方服务凭证。
 
 ## 界面预览
+
+![Emby 观影助手：首页厂牌探索](assets/images/home.zh-CN.png)
+
+*图为未配置 Emby 的首页。连接并同步 Emby 后会显示媒体库；有可续播记录时显示“继续观看”。*
 
 ![Emby 观影助手：榜单筛选与海报墙](assets/images/poster-wall.zh-CN.png)
 
@@ -24,6 +30,7 @@ Emby 观影助手是一款 macOS 应用，将影视榜单、TMDB 搜索、Emby �
 
 - **首页与继续观看**：首页浏览 Emby 媒体库与继续观看，使用默认播放器和线路续播对应版本，支持查看全部。
 - **榜单发现**：浏览 IMDb、豆瓣、TMDB、影展与奖项等榜单，查看排名和入库状态；从作品详情查看收录它的榜单。预置榜单随 [emby-collection-sync](https://github.com/ffinly/emby-collection-sync/blob/main/README.md) 更新，也可通过“添加 TMDB 片单”导入在线片单。
+- **厂牌探索**：按电影厂牌、动画厂牌、欧美剧集和亚洲剧集浏览 48 个厂牌与平台的作品，支持作品筛选，展示入库、观看和订阅状态。
 - **搜索与人物作品**：按片名、人物、合集名称或编号搜索，支持 TMDB／IMDb 编号及作品链接；片名留空可浏览所选地区的热门影视。浏览简介、评分、演职人员与人物作品集，详情页可跳转豆瓣、IMDb 和 TMDB。
 - **媒体库与合集**：浏览 Emby 电影、剧集、合集、季度与分集，查看可播放版本，管理观看状态；可临时隐藏观看记录与进度。
 - **入库与缺集核对**：根据已同步的 Emby 数据展示入库状态，并按季度对照 TMDB 集数与 Emby 实际集号。尚未核对或总集数未知时单独提示。缺集核对无需配置 MoviePilot，订阅时才需要配置。
@@ -51,10 +58,10 @@ Emby 观影助手是一款 macOS 应用，将影视榜单、TMDB 搜索、Emby �
 
 ### 连接服务
 
-1. 在“连接与设置”填写 Emby 地址并登录。
+1. 如需使用媒体库功能，在“连接与设置”填写 Emby 地址并登录。
 2. 在 [TMDB API 设置](https://www.themoviedb.org/settings/api) 申请自己的 API Key，阅读 [API 使用条款](https://www.themoviedb.org/api-terms-of-use)，再填入应用；需要时可配置 HTTP／SOCKS 代理，用于 TMDB 资料、图片、榜单及软件更新（GitHub）；Emby 与 MoviePilot 直连。
-3. 在首页执行“完整同步媒体库”并同步榜单，查看进度与结果。
-4. 安装外部播放器。需要订阅时，再填写 MoviePilot 服务地址与 API 令牌；令牌可从 MoviePilot“设定 → 系统 → 基础设置”复制。
+3. 在首页同步榜单；连接 Emby 后，再执行“完整同步媒体库”。
+4. 需要播放时安装外部播放器；需要订阅时，再填写 MoviePilot 服务地址与 API 令牌；令牌可从 MoviePilot“设定 → 系统 → 基础设置”复制。
 
 TMDB 与 MoviePilot 支持独立“清除配置”；清除 TMDB API 配置时保留代理。退出 Emby 登录会清空地址、账号、令牌及全部线路配置。
 

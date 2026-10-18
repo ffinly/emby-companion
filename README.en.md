@@ -10,11 +10,17 @@
 
 Emby Companion is a macOS app that connects movie and TV lists, TMDB search, your Emby library, and MoviePilot subscriptions. Discover titles, check library availability, launch an external player, and sync playback progress from one app.
 
+**An Emby server is optional.** Add your own TMDB API Key to browse lists and studio catalogs, search titles and people, and explore ratings, overviews, and filmographies. Library comparisons, missing-episode checks, and playback progress sync require an Emby connection.
+
 [Download Latest](https://github.com/ffinly/emby-companion/releases/latest) · [Release History](https://github.com/ffinly/emby-companion/releases) · [Report an Issue](https://github.com/ffinly/emby-companion/issues)
 
 This repository provides releases, documentation, and issue tracking. The app is closed source and does not provide media, server accounts, or third-party credentials.
 
 ## Interface Preview
+
+![Emby Companion: Home and studio discovery](assets/images/home.en.png)
+
+*Home before configuring Emby. Connect and sync Emby to show your libraries; Continue Watching appears when resumable items are available.*
 
 ![Emby Companion: list filters and poster wall](assets/images/poster-wall.en.png)
 
@@ -24,6 +30,7 @@ This repository provides releases, documentation, and issue tracking. The app is
 
 - **Home and Continue Watching:** Browse Emby libraries and resume the matching media version with your default player and route. Open the full view to see all entries.
 - **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [emby-collection-sync](https://github.com/ffinly/emby-collection-sync/blob/main/README.en.md); import online lists through “Add TMDB List.”
+- **Studio discovery:** Explore titles from 48 studio and platform entries across Movie Studios, Animation Studios, Western TV, and Asian TV, with filters and library, watch, and subscription status.
 - **Search titles and people:** Search by title, person, collection name, or ID, including TMDB and IMDb IDs and title links. Leave the title blank to browse popular titles in the selected region. Browse overviews, ratings, credits, and filmographies, with links to Douban, IMDb, and TMDB.
 - **Browse your library:** Explore Emby movies, TV shows, collections, seasons, episodes, and playable versions. Manage watch states or temporarily hide watch history and progress.
 - **Check availability and missing episodes:** Use synchronized Emby data to check library status and compare TMDB episode counts with actual Emby episode numbers by season. Unchecked seasons and unknown totals are identified separately. Checking missing episodes works without MoviePilot; subscribing requires it.
@@ -51,10 +58,10 @@ The current package is locally signed and has no Apple Developer ID signature or
 
 ### Connect Your Services
 
-1. Enter your Emby address and sign in under “Connections & Settings.”
+1. To use library features, enter your Emby address and sign in under “Connections & Settings.”
 2. Request your own key in [TMDB API settings](https://www.themoviedb.org/settings/api), read the [API terms](https://www.themoviedb.org/api-terms-of-use), and enter the key in the app. Configure an HTTP or SOCKS proxy if needed for TMDB metadata, images, lists, and software updates from GitHub; Emby and MoviePilot connect directly.
-3. Run “Full Library Sync” and synchronize lists from the home page, where you can follow progress and results.
-4. Install an external player. For subscriptions, also enter your MoviePilot address and API token, available under MoviePilot's “Settings → System → Basic Settings.”
+3. Synchronize lists from Home. After connecting Emby, run “Full Library Sync.”
+4. Install an external player if you want to play media. For subscriptions, also enter your MoviePilot address and API token, available under MoviePilot's “Settings → System → Basic Settings.”
 
 TMDB and MoviePilot each offer “Clear configuration.” Clearing TMDB API settings keeps the proxy. Signing out of Emby clears its address, account, token, and all route settings.
 
