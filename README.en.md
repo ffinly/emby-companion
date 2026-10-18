@@ -8,9 +8,9 @@
 
 **Elegantly Explore, Subscribe, and Play Your Emby Library**
 
-Emby Companion is a macOS app that connects movie and TV lists, TMDB search, your Emby library, and MoviePilot subscriptions. Discover titles, check library availability, launch an external player, and sync playback progress from one app.
+Emby Companion is a macOS app for finding your next movie or TV show. Explore curated lists, studios, and the work of your favorite actors and directors. Connect Emby to check library availability and missing episodes, then keep watching with your preferred player as progress syncs back to your library.
 
-**An Emby server is optional.** Add your own TMDB API Key to browse lists and studio catalogs, search titles and people, and explore ratings, overviews, and filmographies. Library comparisons, missing-episode checks, and playback progress sync require an Emby connection.
+**An Emby server is optional.** Add your own TMDB API Key to browse lists, explore 48 studios and platforms, search titles and people, and view ratings and overviews. Connect Emby and a subscription service whenever you need them.
 
 [Download Latest](https://github.com/ffinly/emby-companion/releases/latest) · [Release History](https://github.com/ffinly/emby-companion/releases) · [Report an Issue](https://github.com/ffinly/emby-companion/issues)
 
@@ -28,15 +28,23 @@ This repository provides releases, documentation, and issue tracking. The app is
 
 ## Main Features
 
-- **Home and Continue Watching:** Browse Emby libraries and resume the matching media version with your default player and route. Open the full view to see all entries.
+### Discover Movies and TV
+
 - **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [emby-collection-sync](https://github.com/ffinly/emby-collection-sync/blob/main/README.en.md); import online lists through “Add TMDB List.”
 - **Studio discovery:** Explore titles from 48 studio and platform entries across Movie Studios, Animation Studios, Western TV, and Asian TV, with filters and library, watch, and subscription status.
 - **Search titles and people:** Search by title, person, collection name, or ID, including TMDB and IMDb IDs and title links. Leave the title blank to browse popular titles in the selected region. Browse overviews, ratings, credits, and filmographies, with links to Douban, IMDb, and TMDB.
+- **Core List Coverage:** Includes tiers 1–3 by default. Select tiers or include and exclude individual lists, then save to update deduplicated statistics. The home page's total unique titles and in-library count still cover all lists. You can also choose which list opens from Home.
+
+### Your Library and Playback
+
+- **Home and Continue Watching:** Browse Emby libraries and resume the matching media version with your default player and route. Open the full view to see all entries.
 - **Browse your library:** Explore Emby movies, TV shows, collections, seasons, episodes, and playable versions. Manage watch states or temporarily hide watch history and progress.
 - **Check availability and missing episodes:** Use synchronized Emby data to check library status and compare TMDB episode counts with actual Emby episode numbers by season. Unchecked seasons and unknown totals are identified separately. Checking missing episodes works without MoviePilot; subscribing requires it.
-- **Core List Coverage:** Includes tiers 1–3 by default. Select tiers or include and exclude individual lists, then save to update deduplicated statistics. The home page's total unique titles and in-library count still cover all lists. You can also choose which list opens from Home.
-- **MoviePilot integration:** Subscribe to missing movies or incomplete seasons, skipping available movies, complete seasons, and existing subscriptions. Search and manage subscriptions individually or in batches. MoviePilot is optional and handles downloads and library imports.
 - **Multiple routes and external players:** Set separate synchronization and playback routes for the same Emby server. Choose a media version and launch SenPlayer, Infuse, or VidHub, with resume playback and progress callbacks. Split movies show labels such as `PART 1` and `DISC 2`, with matching files sorted numerically or alphabetically. Each part keeps its own progress; full-length versions still sync progress with one another.
+
+### Subscriptions, Caches, and Backups
+
+- **MoviePilot integration:** Subscribe to missing movies or incomplete seasons, skipping available movies, complete seasons, and existing subscriptions. Search and manage subscriptions individually or in batches. MoviePilot is optional and handles downloads and library imports.
 - **Metadata and image caches:** A full library sync fetches TMDB title, person, and full-season episode metadata in your selected language. Images load on demand. Inspect sync results, retry failures, manage caches, or rebuild the local search index.
 - **Backup and restore:** Choose configuration, lists, caches, and preferences for encrypted export and selective restore.
 
@@ -54,7 +62,24 @@ Requires **macOS 14 or later**. Universal packages support **Apple Silicon and I
 
 ### First Launch: macOS Security Prompts
 
-The current package is locally signed and has no Apple Developer ID signature or notarization. After confirming it came from this repository's Releases, try opening it once. If blocked, go to **System Settings → Privacy & Security → Open Anyway** and follow the prompts. If macOS reports damage or malware, verify the source and report the exact message. See [Apple's guidance](https://support.apple.com/en-us/102445); later packages' signing status is listed in their Release notes.
+The current package is locally signed and has no Apple Developer ID signature or notarization. After confirming it came from this repository's Releases, try opening it once. If blocked, go to **System Settings → Privacy & Security → Open Anyway** and follow the prompts. See [Apple's guidance](https://support.apple.com/en-us/102445).
+
+<details>
+<summary>Alternative: use Terminal to address first-launch restrictions</summary>
+
+Use this only after confirming the package came from this repository's Releases and moving the app to Applications:
+
+```bash
+xattr -rd com.apple.quarantine "/Applications/Emby Companion.app"
+```
+
+If permission is denied, add `sudo` before the command.
+
+This command removes the app's download quarantine attribute; it cannot repair genuinely damaged files. If macOS explicitly reports malware, stop opening the app and report the exact message.
+
+</details>
+
+Later packages' signing status is listed in their Release notes.
 
 ### Connect Your Services
 
