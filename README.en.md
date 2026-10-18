@@ -18,13 +18,15 @@ This repository provides releases, documentation, and issue tracking. The app is
 
 ## Interface Preview
 
+Screenshots show Liquid Glass on macOS 26 or later. Earlier versions use the classic appearance.
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/images/home.en.dark.png">
   <source media="(prefers-color-scheme: light)" srcset="assets/images/home.en.png">
   <img src="assets/images/home.en.png" alt="Emby Companion: Home and studio discovery">
 </picture>
 
-*Home before configuring Emby. Connect and sync Emby to show your libraries; Continue Watching appears when resumable items are available.*
+*Explore studios from Home. Connect and sync Emby to show your libraries; Continue Watching appears when resumable items are available.*
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/images/poster-wall.en.dark.png">
@@ -46,7 +48,7 @@ This repository provides releases, documentation, and issue tracking. The app is
 ### Your Library and Playback
 
 - **Home and Continue Watching:** Browse Emby libraries and resume the matching media version with your default player and route. Open the full view to see all entries.
-- **Browse your library:** Explore Emby movies, TV shows, collections, seasons, episodes, and playable versions. Manage watch states or temporarily hide watch history and progress.
+- **Browse your library:** Explore Emby movies, TV shows, collections, seasons, episodes, and playable versions. Manage watch states, hide watch history and progress, or independently hide Libraries or Continue Watching on Home.
 - **Check availability and missing episodes:** Use synchronized Emby data to check library status and compare TMDB episode counts with actual Emby episode numbers by season. Unchecked seasons and unknown totals are identified separately. Checking missing episodes works without MoviePilot; subscribing requires it.
 - **Multiple routes and external players:** Set separate synchronization and playback routes for the same Emby server. Choose a media version and launch SenPlayer, Infuse, or VidHub, with resume playback and progress callbacks. Split movies show labels such as `PART 1` and `DISC 2`, with matching files sorted numerically or alphabetically. Each part keeps its own progress; full-length versions still sync progress with one another.
 
@@ -63,6 +65,8 @@ Set interface, preset list, TMDB metadata, and poster languages independently un
 List synchronization reads and caches upstream names in all three languages, so switching between cached names needs no new download. Title and person metadata, episode details, and titles shown in sync history follow the **TMDB Metadata Language**, with separate caches for each language. Available Emby data is retained when corresponding metadata is missing. Refreshing metadata updates local data only, leaving server metadata unchanged.
 
 Posters can use the original language, Chinese, or English. Cached images are reused; uncached images still require a connection. Library name mapping supports Chinese–English presets and custom display names. Blank mappings keep the original name, and changes apply only within this app.
+
+Adjust poster size under “Connections & Settings → Appearance” and switch between Liquid Glass and the classic appearance on supported systems.
 
 ## Download and Get Started
 
@@ -134,7 +138,7 @@ Multilingual release notes follow the current interface language. Older notes av
 | TMDB Cache | Title and person metadata, posters, and person images |
 | Emby Configuration | Server, routes, current account, sign-in token, and watch history |
 | Emby Cache | Library, collections, episodes, and Emby images |
-| Preferences | Languages, name mappings, player and display preferences |
+| Preferences | Language, appearance, playback and privacy preferences |
 
 Choose what to export, set a password of at least **eight characters**, and save the `.ecbackup` file. Choose the restore scope again when importing: configuration, lists, and preferences replace corresponding data, while caches are merged. Core list selection is included with “TMDB Lists.” Watch history is included with “Emby Configuration” for the current account only; restore checks the server and account and keeps newer records.
 
