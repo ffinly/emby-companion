@@ -18,11 +18,19 @@ This repository provides releases, documentation, and issue tracking. The app is
 
 ## Interface Preview
 
-![Emby Companion: Home and studio discovery](assets/images/home.en.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/images/home.en.dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/images/home.en.png">
+  <img src="assets/images/home.en.png" alt="Emby Companion: Home and studio discovery">
+</picture>
 
 *Home before configuring Emby. Connect and sync Emby to show your libraries; Continue Watching appears when resumable items are available.*
 
-![Emby Companion: list filters and poster wall](assets/images/poster-wall.en.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/images/poster-wall.en.dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/images/poster-wall.en.png">
+  <img src="assets/images/poster-wall.en.png" alt="Emby Companion: list filters and poster wall">
+</picture>
 
 *Browse movie and TV lists, filter titles, and check availability in your Emby library.*
 

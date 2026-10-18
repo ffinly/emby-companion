@@ -18,11 +18,19 @@ Emby 观影助手是一款 macOS 观影工具。从榜单、厂牌和喜欢的�
 
 ## 界面预览
 
-![Emby 观影助手：首页厂牌探索](assets/images/home.zh-CN.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/images/home.zh-CN.dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/images/home.zh-CN.png">
+  <img src="assets/images/home.zh-CN.png" alt="Emby 观影助手：首页厂牌探索">
+</picture>
 
 *图为未配置 Emby 的首页。连接并同步 Emby 后会显示媒体库；有可续播记录时显示“继续观看”。*
 
-![Emby 观影助手：榜单筛选与海报墙](assets/images/poster-wall.zh-CN.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/images/poster-wall.zh-CN.dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="assets/images/poster-wall.zh-CN.png">
+  <img src="assets/images/poster-wall.zh-CN.png" alt="Emby 观影助手：榜单筛选与海报墙">
+</picture>
 
 *浏览影视榜单，筛选作品并查看 Emby 入库状态。*
 
