@@ -1,6 +1,6 @@
 <p><img src="assets/images/app-icon.png" alt="Emby Companion" width="96" height="96"></p>
 
-# Emby Companion
+# Emby 观影助手
 
 **简体中文** | [繁體中文](README.zh-TW.md) | [English](README.en.md)
 
