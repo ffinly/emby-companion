@@ -18,7 +18,7 @@ This repository provides releases, documentation, and issue tracking. The app is
 
 ## Interface Preview
 
-Screenshots show Liquid Glass on macOS 26 or later. Earlier versions use the classic appearance.
+Screenshots show Liquid Glass on macOS 26 or later and automatically switch with the page’s light or dark theme. Earlier versions use the classic appearance.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/images/home.en.dark.png">
@@ -66,7 +66,7 @@ List synchronization reads and caches upstream names in all three languages, so 
 
 Posters can use the original language, Chinese, or English. Cached images are reused; uncached images still require a connection. Library name mapping supports Chinese–English presets and custom display names. Blank mappings keep the original name, and changes apply only within this app.
 
-Adjust poster size under “Connections & Settings → Appearance” and switch between Liquid Glass and the classic appearance on supported systems.
+Under “Connections & Settings → Appearance,” choose Automatic (the default, following the system), Light, or Dark mode, adjust poster size, and switch between Liquid Glass and the classic appearance on supported systems.
 
 ## Download and Get Started
 
