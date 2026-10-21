@@ -42,15 +42,15 @@ Screenshots show Liquid Glass on macOS 26 or later and automatically switch with
 
 - **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [emby-collection-sync](https://github.com/ffinly/emby-collection-sync/blob/main/README.en.md); import online lists through “Add TMDB List.”
 - **Studio discovery:** Explore titles from 48 studio and platform entries across Movie Studios, Animation Studios, Western TV, and Asian TV, with filters and library, watch, and subscription status.
-- **Search titles and people:** Search by title, person, collection name, or ID, including TMDB and IMDb IDs and title links. Leave the title blank to browse popular titles in the selected region. Browse overviews, ratings, credits, and filmographies, with links to Douban, IMDb, and TMDB.
+- **Search titles and people:** Search by title, person, collection name, or ID, including TMDB and IMDb IDs and title links. Leave the title blank to browse popular titles in the selected region. Explore taglines, overviews, ratings, credits, and filmographies, with links from details to Douban, IMDb, and TMDB.
 - **Core List Coverage:** Includes tiers 1–3 by default. Select tiers or include and exclude individual lists, then save to update deduplicated statistics. The home page's total unique titles and in-library count still cover all lists. You can also choose which list opens from Home.
 
 ### Your Library and Playback
 
 - **Home and Continue Watching:** Browse Emby libraries and resume the matching media version with your default player and route. Open the full view to see all entries.
-- **Browse your library:** Explore Emby movies, TV shows, collections, seasons, episodes, and playable versions. Manage watch states, hide watch history and progress, or independently hide Libraries or Continue Watching on Home.
+- **Browse your library:** Explore Emby movies, TV shows, collections, seasons, episodes, and playable versions. Manage watch states. In Settings → Privacy, hide watch history and progress, or independently hide Libraries or Continue Watching on Home.
 - **Check availability and missing episodes:** Use synchronized Emby data to check library status and compare TMDB episode counts with actual Emby episode numbers by season. Unchecked seasons and unknown totals are identified separately. Checking missing episodes works without MoviePilot; subscribing requires it.
-- **Multiple routes and external players:** Set separate synchronization and playback routes for the same Emby server. Choose a media version and launch SenPlayer, Infuse, or VidHub, with resume playback and progress callbacks. Split movies show labels such as `PART 1` and `DISC 2`, with matching files sorted numerically or alphabetically. Each part keeps its own progress; full-length versions still sync progress with one another.
+- **Multiple routes and external players:** Set separate synchronization and playback routes for the same Emby server, then choose a version to launch SenPlayer, Infuse, or VidHub with resume playback and progress callbacks. Matching parts share a version card and Continue Watching entry; select a `PART 1`, `DISC 2`, or other original file marker to resume, with the last-watched part selected by default and full filenames available on hover. Each part keeps its own progress; full-length versions still sync progress with one another.
 
 ### Subscriptions, Caches, and Backups
 
@@ -67,6 +67,26 @@ List synchronization reads and caches upstream names in all three languages, so 
 Posters can use the original language, Chinese, or English. Cached images are reused; uncached images still require a connection. Library name mapping supports Chinese–English presets and custom display names. Blank mappings keep the original name, and changes apply only within this app.
 
 Under “Connections & Settings → Appearance,” choose Automatic (the default, following the system), Light, or Dark mode, adjust poster size, and switch between Liquid Glass and the classic appearance on supported systems.
+
+## Keyboard Shortcuts (macOS)
+
+| Shortcut | Action |
+| --- | --- |
+| ⌘1 / ⌘2 / ⌘3 | Home / TMDB Search / Emby Library |
+| ⌘4 | Last list or studio visited in this session; opens the default list when none has been visited |
+| ⌘5 | Subscriptions (requires MoviePilot configuration) |
+| ⌘, / ⌘R / ⌘F | Settings / Refresh the current page / Search |
+| ⌘[ | Go back; close the current details when open |
+| ⌘] | Go forward in browsing history, when available |
+| Arrow keys | Move between title and episode cards; switch titles while previewing |
+| Space | Preview the hovered or keyboard-selected title; press again to close |
+| Return | Open full details; activate the focused option in playback dialogs |
+| Esc | Close the current preview, details, or playback dialog; clear selection when no overlay is open |
+| Tab / Shift+Tab | Change playback-dialog options; arrows and hover also select, and clicking outside dismisses |
+
+Space works over both the poster and the text below it. Scrolling retains the selected card. If it leaves the viewport, or keyboard navigation restarts after switching to the mouse, navigation begins at the first fully visible card.
+
+When a text field has focus, arrow keys, Space, Return, and Esc retain their normal text-field behavior. ⌘F selects all existing search text. Submitting a search releases text focus without selecting a result; press an arrow key to start selecting cards.
 
 ## Download and Get Started
 
@@ -114,7 +134,7 @@ After signing in, add and manage routes under “Connections & Settings → Emby
 | Infuse | 8.4.7 or later |
 | VidHub | 2.3.5 or later |
 
-Playback progress syncs automatically, with no switch to enable. **When you finish watching, close the playback window and wait for progress to sync before quitting the player. Quitting the player directly does not sync playback progress.** The app uses only the actual position returned by the player and never estimates progress without a valid callback. If a network error prevents synchronization, retry from the home page. Players must be installed separately.
+Playback progress syncs automatically, with no switch to enable. **Close the playback window to sync progress. Do not quit the player directly.** The app uses only the actual position returned by the player and never estimates progress without a valid callback. If a network error prevents synchronization, retry from the home page. Players must be installed separately.
 
 Keep this app running during playback to maintain the Emby session and playback history. Closing this app’s window keeps heartbeats running; quitting this app or detecting that the player has exited stops them. Valid progress callbacks that arrive later can still be received.
 
