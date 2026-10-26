@@ -48,7 +48,7 @@ Screenshots show Liquid Glass on macOS 26 or later and automatically switch with
 
 ### Discover Movies and TV
 
-- **What to Watch:** Connect and sync Emby to pick movies and TV shows from titles available in Core Lists or your entire library, with unwatched filtering, a full-screen poster wall, and independent light and dark appearance.
+- **What to Watch:** After connecting Emby, syncing your library, and completing its TMDB metadata, pick movies and TV shows from titles available in Core Lists or your entire library, with unwatched filtering, a full-screen poster wall, and independent light and dark appearance. Collection sync and metadata completion for titles outside your library do not block entry.
 - **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [emby-collection-sync](https://github.com/ffinly/emby-collection-sync/blob/main/README.en.md); import online lists through “Add TMDB List.”
 - **Studio discovery:** Explore titles from 48 studio and platform entries across Movie Studios, Animation Studios, Western TV, and Asian TV, with filters and library, watch, and subscription status.
 - **Search titles and people:** Search by title, person, collection name, or ID, including TMDB and IMDb IDs and title links. Leave the title blank to browse popular titles in the selected region. Explore taglines, overviews, ratings, credits, and filmographies. Expand a cast or crew member’s other library titles inline in details, or follow links to Douban, IMDb, and TMDB.
@@ -64,7 +64,7 @@ Screenshots show Liquid Glass on macOS 26 or later and automatically switch with
 ### Subscriptions, Caches, and Backups
 
 - **MoviePilot integration:** Subscribe to missing movies or incomplete seasons, skipping available movies, complete seasons, and existing subscriptions. Search and manage subscriptions individually or in batches. MoviePilot is optional and handles downloads and library imports.
-- **Metadata and image caches:** A full library sync fetches TMDB title, person, and full-season episode metadata in your selected language. Images load on demand. Inspect sync results, retry failures, manage caches, or rebuild the local search index.
+- **Metadata and image caches:** List and library syncs automatically complete TMDB metadata in your selected language for country and genre filters and title details. Connecting Emby also enables caching of person and full-season episode metadata. Images load on demand. Inspect sync results, retry failures, manage caches, or rebuild the local search index.
 - **Backup and restore:** Choose configuration, lists, caches, and preferences for encrypted export and selective restore.
 
 ## Languages and Display
@@ -125,14 +125,18 @@ This command removes the app's download quarantine attribute; it cannot repair g
 
 Later packages' signing status is listed in their Release notes.
 
-### Connect Your Services
+### First-Time Setup
 
-1. To use library features, enter your Emby address and sign in under “Connections & Settings.”
-2. Request your own key in [TMDB API settings](https://www.themoviedb.org/settings/api), read the [API terms](https://www.themoviedb.org/api-terms-of-use), and enter the key in the app. Configure an HTTP or SOCKS proxy if needed for TMDB metadata, images, lists, and software updates from GitHub; Emby and MoviePilot connect directly.
-3. Synchronize lists from Home. After connecting Emby, run “Full Library Sync.”
-4. Install an external player if you want to play media. For subscriptions, also enter your MoviePilot address and API token, available under MoviePilot's “Settings → System → Basic Settings.”
+On a fresh installation, Home shows “Quick Setup,” where you can configure the basics or restore a backup. Existing users can reopen it under “Connections & Settings → About → Quick Setup.”
 
-TMDB and MoviePilot each offer “Clear configuration.” Clearing TMDB API settings keeps the proxy. Signing out of Emby clears its address, account, token, and all route settings.
+1. **Configure TMDB API:** You can request your own API Key free for personal use. Expand “How to Get an API Key,” follow the steps to open [TMDB API settings](https://www.themoviedb.org/settings/api), read the [API terms](https://www.themoviedb.org/api-terms-of-use), enter the **32-character API Key (v3)**, and click “Test and Save.” Do not enter the longer API Read Access Token.
+2. **Configure Emby Server (optional):** Enter the server address, username, and password, then click “Sign In & Sync Emby.” Your library syncs in the background; Emby Premiere is not required. You can skip Emby and still browse lists, search, and explore studios.
+3. **Configure MoviePilot Subscriptions (optional):** Enter the service address and an API token of at least **16 characters**, then click “Test and Save.” Copy the token from MoviePilot's “Settings → System → Basic Settings.” Skip this step if you do not use subscriptions; skipping Emby also skips this step automatically.
+4. Once TMDB is configured and the optional steps are configured or skipped, click “Get Started.” Lists and library data continue syncing in the background. To play media, separately install a supported external player listed below.
+
+Keep the default TMDB API and image addresses unless you use your own reverse proxy. “TMDB Proxy” applies only to TMDB metadata, images, and lists; when disabled, TMDB follows the system proxy. Software updates, Emby, and MoviePilot always follow the system proxy.
+
+TMDB and MoviePilot settings can be cleared separately. Sign out of Emby before clearing TMDB settings; proxy settings are kept. Signing out of Emby clears its address, account, token, routes, local library, dedicated images, and search index. TMDB lists, shared caches, MoviePilot settings, and app preferences are kept. Pending playback progress is retained separately and resumes syncing only after signing back in to the original server and account. Media and watch history on the server are not modified.
 
 <a id="en-emby-routes-and-players"></a>
 
@@ -150,11 +154,11 @@ Playback progress syncs automatically, with no switch to enable. **Close the pla
 
 Keep this app running during playback to maintain the Emby session and playback history. Closing this app’s window keeps heartbeats running; quitting this app or detecting that the player has exited stops them. Valid progress callbacks that arrive later can still be received.
 
-Open “Connections & Settings → Playback → Playback Logs” to inspect player launches, heartbeats, callbacks, and synchronization. Filter, search, view records by playback request, or export `.log` files. Records and expanded ping details load automatically as you scroll. Successful pings are hidden by default and grouped in the full view. Logs stay on this device for up to seven days and 20,000 entries, excluding playback links and credentials.
+Open “Connections & Settings → Playback → View Playback Logs” to inspect player launches, heartbeats, callbacks, and synchronization. Filter, search, view records by playback request, or export `.log` files. Records and expanded ping details load automatically as you scroll. Successful pings are hidden by default and grouped in the full view. Logs stay on this device for up to seven days and 20,000 entries, excluding playback links and credentials.
 
 ## Software Updates
 
-Check manually or enable automatic checking and downloading under “Connections & Settings → Software Update.” After verification, the update window guides installation and relaunch. Failed verification stops installation.
+Check manually or enable automatic checking and downloading under “Connections & Settings → Software Update.” Downloads show progress and can resume after interruption. After verification, you choose when to install and relaunch; failed verification stops installation. If an update fails, you can view and copy diagnostic details for that attempt.
 
 Multilingual release notes follow the current interface language. Older notes available in only one language retain their original text.
 
@@ -164,15 +168,15 @@ Multilingual release notes follow the current interface language. Older notes av
 
 | Backup Component | Included Data |
 | --- | --- |
-| TMDB API Configuration | API address and API Key |
-| MoviePilot API Configuration | Service address and API token |
+| TMDB API Settings | API address, image address, and API Key |
+| MoviePilot API Settings | Service address and API token |
 | TMDB Lists | List contents, custom TMDB lists, list settings, and core list selection |
 | TMDB Cache | Title and person metadata, posters, and person images |
-| Emby Configuration | Server, routes, current account, sign-in token, and watch history |
+| Emby Settings | Server, routes, current account, sign-in token, and watch history |
 | Emby Cache | Library, collections, episodes, and Emby images |
 | Preferences | Language, appearance, playback and privacy preferences |
 
-Choose what to export, set a password of at least **eight characters**, and save the `.ecbackup` file. Choose the restore scope again when importing: configuration, lists, and preferences replace corresponding data, while caches are merged. Core list selection is included with “TMDB Lists.” Watch history is included with “Emby Configuration” for the current account only; restore checks the server and account and keeps newer records.
+Choose what to export, set a password of at least **eight characters**, and save the `.ecbackup` file. Components for unconfigured services cannot be selected. When importing, choose again from the components included in the backup: configuration, lists, and preferences replace corresponding data, while caches are merged. Core list selection is included with “TMDB Lists.” Watch history is included with “Emby Settings” for the current account only; restore checks the server and account and keeps newer records.
 
 Backups may contain API keys and sign-in information. Keep the file and password secure.
 
@@ -180,7 +184,9 @@ Backups may contain API keys and sign-in information. Keep the file and password
 
 Connection information and caches are stored locally. Features send requests to your configured services, TMDB, and GitHub. GitHub list-definition and update requests do not include your TMDB API Key or Emby credentials.
 
-When reporting issues, include the app version, macOS version, steps, and error message. Hide private addresses, accounts, keys, and other sensitive information in screenshots or logs.
+When reporting issues, click “Export Diagnostics” under “Connections & Settings → About” and attach the generated `.txt` file, steps to reproduce, and an error screenshot. The file summarizes the version, configuration, cache and sync status, recent errors, update diagnostics, and logs from up to the **10 most recent playback sessions**, with consecutive successful pings summarized. Exporting makes no new network requests.
+
+Diagnostics automatically hide server addresses, accounts, credentials, file paths, and title identifiers. Title names are replaced with consistent aliases within each file, and text follows the interface language at export time. The in-app playback logs and their separate export retain real titles; hide viewing content and private information before sharing those logs or screenshots.
 
 ## 📈 Star History
 
