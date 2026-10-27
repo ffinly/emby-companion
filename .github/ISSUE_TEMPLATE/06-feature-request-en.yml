@@ -1,0 +1,46 @@
+---
+name: Feature request (English)
+description: Suggest a feature, an interaction improvement, or a list or studio to
+  add.
+title: "[Feature] "
+body:
+- type: markdown
+  attributes:
+    value: |-
+      Suggestions are welcome! Please search existing issues first and keep each issue focused on one request.
+
+      If an existing feature is not working, use “Bug report (English)” instead. Issues are public; do not include private information or service credentials.
+- type: textarea
+  id: problem
+  attributes:
+    label: Use case and problem
+    description: Explain what you are trying to do and what is inconvenient about
+      the current workflow.
+    placeholder: When I want to…, I currently have to…, which…
+  validations:
+    required: true
+- type: textarea
+  id: proposal
+  attributes:
+    label: Suggested improvement
+    description: Describe the behavior or workflow you would like. If you do not have
+      a specific solution, describe the outcome you need.
+    placeholder: I would like to…
+  validations:
+    required: true
+- type: textarea
+  id: alternatives
+  attributes:
+    label: Current workaround or alternatives (optional)
+    placeholder: How do you handle this today? What alternatives have you considered?
+  validations:
+    required: false
+- type: textarea
+  id: references
+  attributes:
+    label: References and additional context (optional)
+    description: Include screenshots, sketches, or public links. For list or studio
+      suggestions, include a source link and the intended scope.
+    placeholder: Reference links, UI sketches, or other details…
+  validations:
+    required: false

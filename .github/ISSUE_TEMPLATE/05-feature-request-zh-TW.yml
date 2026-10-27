@@ -1,0 +1,42 @@
+---
+name: 功能建議（繁體中文）
+description: 提出新功能、互動改進，或希望補充的片單與廠牌。
+title: "[Feature] "
+body:
+- type: markdown
+  attributes:
+    value: |-
+      歡迎提出建議！請先搜尋現有 Issue，盡量每個 Issue 只討論一個需求。
+
+      如果是現有功能出錯，請使用「問題回報（繁體中文）」。Issue 內容公開可見，請勿填寫私人資訊或服務憑證。
+- type: textarea
+  id: problem
+  attributes:
+    label: 使用情境與遇到的困難
+    description: 請先說明你想完成什麼，以及目前哪裡不方便。
+    placeholder: 當我想……時，目前需要……，因此……
+  validations:
+    required: true
+- type: textarea
+  id: proposal
+  attributes:
+    label: 希望如何改進？
+    description: 描述你希望的行為或操作流程。暫時沒有具體方案也可以，說明希望達到的結果即可。
+    placeholder: 我希望能夠……
+  validations:
+    required: true
+- type: textarea
+  id: alternatives
+  attributes:
+    label: 目前做法或其他方案（選填）
+    placeholder: 目前如何處理這個需求？考慮過哪些替代方案？
+  validations:
+    required: false
+- type: textarea
+  id: references
+  attributes:
+    label: 參考資料與補充資訊（選填）
+    description: 可以附截圖、草圖或公開連結。片單或廠牌建議請附來源連結及收錄範圍。
+    placeholder: 參考連結、介面示意或其他說明……
+  validations:
+    required: false

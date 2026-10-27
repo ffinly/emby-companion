@@ -1,0 +1,42 @@
+---
+name: 功能建议（简体中文）
+description: 提出新功能、交互改进，或希望补充的榜单与厂牌。
+title: "[Feature] "
+body:
+- type: markdown
+  attributes:
+    value: |-
+      欢迎提出建议！请先搜索已有 Issue，尽量每个 Issue 只讨论一个需求。
+
+      如果是现有功能出错，请使用「问题反馈（简体中文）」。Issue 内容公开可见，请勿填写私人信息或服务凭据。
+- type: textarea
+  id: problem
+  attributes:
+    label: 使用场景与遇到的困难
+    description: 请先说明你想完成什么，以及目前哪里不方便。
+    placeholder: 当我想……时，目前需要……，因此……
+  validations:
+    required: true
+- type: textarea
+  id: proposal
+  attributes:
+    label: 希望怎样改进？
+    description: 描述你希望的行为或操作流程。暂时没有具体方案也可以，说明希望达到的结果即可。
+    placeholder: 我希望能够……
+  validations:
+    required: true
+- type: textarea
+  id: alternatives
+  attributes:
+    label: 当前做法或其他方案（选填）
+    placeholder: 现在如何处理这个需求？考虑过哪些替代方案？
+  validations:
+    required: false
+- type: textarea
+  id: references
+  attributes:
+    label: 参考资料与补充信息（选填）
+    description: 可以附截图、草图或公开链接。榜单或厂牌建议请附来源链接及收录范围。
+    placeholder: 参考链接、界面示意或其他说明……
+  validations:
+    required: false

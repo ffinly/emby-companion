@@ -1,0 +1,84 @@
+---
+name: Bug report (English)
+description: Report crashes or problems with syncing, search, playback, or other features.
+title: "[Bug] "
+body:
+- type: markdown
+  attributes:
+    value: |-
+      Thanks for helping improve Emby Companion! Please search existing issues and check the [documentation](https://github.com/ffinly/emby-companion/blob/main/README.en.md) first. Please keep each issue focused on one problem.
+
+      Issues are public. Do not upload server addresses, passwords, API keys, tokens, playback URLs, or backup files. Check screenshots and logs for private information before sharing.
+- type: input
+  id: app-version
+  attributes:
+    label: App version
+    description: Find this in Connections & Settings → About.
+    placeholder: 'For example: 1.9.2'
+  validations:
+    required: true
+- type: input
+  id: system
+  attributes:
+    label: OS version and device
+    description: Include your OS version and device model or chip type.
+    placeholder: 'For example: macOS 26.x / Apple Silicon, or macOS 14.x / Intel'
+  validations:
+    required: true
+- type: textarea
+  id: actual
+  attributes:
+    label: What happened?
+    description: Describe the actual behavior. Include the exact error message, if
+      any.
+    placeholder: What did you do, and what went wrong?
+  validations:
+    required: true
+- type: textarea
+  id: steps
+  attributes:
+    label: Steps to reproduce
+    description: List the steps that trigger the issue. If it is intermittent or cannot
+      be reproduced reliably, please say so.
+    placeholder: |-
+      1. Open…
+      2. Click…
+      3. Observe…
+  validations:
+    required: true
+- type: textarea
+  id: expected
+  attributes:
+    label: Expected behavior
+    placeholder: What did you expect to happen?
+  validations:
+    required: true
+- type: input
+  id: services
+  attributes:
+    label: Related services and player (optional)
+    description: For connection, playback, or sync issues, include your Emby / MoviePilot
+      / player name and version. Do not include server addresses or credentials.
+    placeholder: 'For example: Emby 4.x; Infuse 8.x; progress does not update after
+      closing the playback window'
+  validations:
+    required: false
+- type: textarea
+  id: attachments
+  attributes:
+    label: Screenshots, diagnostics, or logs (optional)
+    description: Paste screenshots or drag files here. Export redacted diagnostics
+      from Connections & Settings → About → Export Diagnostics, then review the file
+      before sharing. Separately exported playback logs and screenshots may contain
+      real media titles or other private information.
+    placeholder: Attach helpful screenshots, a diagnostic file, or relevant log excerpts.
+  validations:
+    required: false
+- type: textarea
+  id: context
+  attributes:
+    label: Additional context (optional)
+    placeholder: Does it happen every time? When did it start? What workarounds have
+      you tried?
+  validations:
+    required: false

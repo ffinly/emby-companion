@@ -1,0 +1,12 @@
+---
+blank_issues_enabled: true
+contact_links:
+- name: 使用说明（简体中文）
+  url: https://github.com/ffinly/emby-companion/blob/main/README.md
+  about: 安装、首次配置、播放器与播放进度同步说明。
+- name: 使用說明（繁體中文）
+  url: https://github.com/ffinly/emby-companion/blob/main/README.zh-TW.md
+  about: 安裝、初次設定、播放器與播放進度同步說明。
+- name: Documentation (English)
+  url: https://github.com/ffinly/emby-companion/blob/main/README.en.md
+  about: Installation, initial setup, players, and playback progress sync.

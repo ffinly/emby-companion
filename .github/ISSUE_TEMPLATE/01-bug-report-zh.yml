@@ -1,0 +1,76 @@
+---
+name: 问题反馈（简体中文）
+description: 反馈崩溃、同步、搜索、播放或其他使用问题。
+title: "[Bug] "
+body:
+- type: markdown
+  attributes:
+    value: |-
+      感谢你帮助改进 Emby 观影助手！请先搜索已有 Issue，并查看[使用说明](https://github.com/ffinly/emby-companion/blob/main/README.md)。每个 Issue 请尽量只描述一个问题。
+
+      Issue 内容公开可见，请勿上传服务器地址、账号密码、API Key、Token、播放链接或备份文件；分享截图、日志前请检查并隐藏私人信息。
+- type: input
+  id: app-version
+  attributes:
+    label: 应用版本
+    description: 可在「连接与设置 → 关于应用」查看。
+    placeholder: 例如：1.9.2
+  validations:
+    required: true
+- type: input
+  id: system
+  attributes:
+    label: 系统版本与设备
+    description: 填写系统版本及设备型号或芯片类型。
+    placeholder: 例如：macOS 26.x / Apple Silicon，或 macOS 14.x / Intel
+  validations:
+    required: true
+- type: textarea
+  id: actual
+  attributes:
+    label: 遇到了什么问题？
+    description: 描述实际发生的情况；如有错误提示，请附上原文。
+    placeholder: 执行了什么操作？出现了什么现象？
+  validations:
+    required: true
+- type: textarea
+  id: steps
+  attributes:
+    label: 复现步骤
+    description: 请写出可以重现问题的步骤；如果偶发或无法稳定复现，也请说明。
+    placeholder: |-
+      1. 打开……
+      2. 点击……
+      3. 出现……
+  validations:
+    required: true
+- type: textarea
+  id: expected
+  attributes:
+    label: 预期结果
+    placeholder: 你希望执行这些操作后发生什么？
+  validations:
+    required: true
+- type: input
+  id: services
+  attributes:
+    label: 相关服务与播放器（选填）
+    description: 涉及连接、播放或同步时，填写 Emby / MoviePilot / 播放器名称及版本。无需提供服务地址或凭据。
+    placeholder: 例如：Emby 4.x；Infuse 8.x；关闭播放窗口后进度未更新
+  validations:
+    required: false
+- type: textarea
+  id: attachments
+  attributes:
+    label: 截图、诊断信息或日志（选填）
+    description: 可粘贴截图，或将文件拖入此处。「连接与设置 → 关于应用 → 导出诊断信息」可生成经过脱敏的诊断文件；上传前仍请检查内容。单独导出的播放日志和截图可能包含真实片名等私人信息。
+    placeholder: 请补充有帮助的截图、诊断文件或相关日志片段。
+  validations:
+    required: false
+- type: textarea
+  id: context
+  attributes:
+    label: 补充信息（选填）
+    placeholder: 是否每次发生？从哪个版本开始？已尝试哪些解决方法？
+  validations:
+    required: false
