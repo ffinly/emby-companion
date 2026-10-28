@@ -58,7 +58,8 @@ Screenshots show Liquid Glass on macOS 26 or later and automatically switch with
 
 - **Home and Continue Watching:** Browse Emby libraries and resume the matching media version with your default player and route. Open the full view to see all entries.
 - **Browse your library:** Explore Emby movies, TV shows, collections, seasons, episodes, and playable versions. Filter movies, TV shows, or short films, and manage watch states. In Settings → Privacy, hide watch history and progress, or independently hide Libraries or Continue Watching on Home.
-- **Check availability and missing episodes:** Use synchronized Emby data to check library status and compare TMDB episode counts with actual Emby episode numbers by season. Unchecked seasons and unknown totals are identified separately. Checking missing episodes works without MoviePilot; subscribing requires it.
+- **Episode groups:** When groups are available, view the automatic recommendation or switch groups manually from the season menu in the series playback section. Episode titles and summaries follow the selected group; season and episode numbers and playback order stay the same.
+- **Check availability and missing episodes:** Use synchronized Emby data to check library status and check missing seasons and episodes against the current season arrangement or episode group, including missing episode numbers. Unchecked seasons and unknown totals are identified separately. Checking missing episodes works without MoviePilot; subscribing requires it.
 - **Multiple routes and external players:** Set separate synchronization and playback routes for the same Emby server, then choose a version to launch SenPlayer, Infuse, or VidHub with resume playback and progress callbacks. Matching parts share a version card and Continue Watching entry; select a `PART 1`, `DISC 2`, or other original file marker to resume, with the last-watched part selected by default and full filenames available on hover. Each part keeps its own progress; full-length versions still sync progress with one another.
 
 ### Subscriptions, Caches, and Backups
@@ -170,10 +171,10 @@ Multilingual release notes follow the current interface language. Older notes av
 | --- | --- |
 | TMDB API Settings | API address, image address, and API Key |
 | MoviePilot API Settings | Service address and API token |
-| TMDB Lists | List contents, custom TMDB lists, list settings, and core list selection |
-| TMDB Cache | Title and person metadata, posters, and person images |
+| TMDB Lists | List contents, custom lists, list settings, and core list selection |
+| TMDB Cache | Title, episode, person, and episode group metadata and images |
 | Emby Settings | Server, routes, current account, sign-in token, and watch history |
-| Emby Cache | Library, collections, episodes, and Emby images |
+| Emby Cache | Library, collections, episodes, episode group selections, and Emby images |
 | Preferences | Language, appearance, playback and privacy preferences |
 
 Choose what to export, set a password of at least **eight characters**, and save the `.ecbackup` file. Components for unconfigured services cannot be selected. When importing, choose again from the components included in the backup: configuration, lists, and preferences replace corresponding data, while caches are merged. Core list selection is included with “TMDB Lists.” Watch history is included with “Emby Settings” for the current account only; restore checks the server and account and keeps newer records.
