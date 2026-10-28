@@ -12,7 +12,7 @@ Emby 觀影助手是一款 macOS 觀影工具。從榜單、廠牌和喜歡的�
 
 **沒有 Emby 伺服器也可以使用。** 設定自己的 TMDB API Key，即可獨立瀏覽榜單、探索 48 個廠牌與平台、搜尋影視和人物，查看評分與簡介。Emby 與訂閱服務都可依需求連線。
 
-[下載最新版](https://github.com/ffinly/emby-companion/releases/latest) · [版本記錄](https://github.com/ffinly/emby-companion/releases) · [回報問題](https://github.com/ffinly/emby-companion/issues)
+[下載最新版](https://github.com/ffinly/emby-companion/releases/latest) · [少數派介紹](https://sspai.com/post/116958) · [版本記錄](https://github.com/ffinly/emby-companion/releases) · [問題與建議](https://github.com/ffinly/emby-companion/issues/new/choose)
 
 本儲存庫提供安裝包、使用說明與問題回報；應用程式閉源，不提供影視資源、伺服器帳號或第三方服務憑證。
 
@@ -185,7 +185,9 @@ TMDB 與 MoviePilot 可分別「清除設定」；清除 TMDB 設定需先登出
 
 連線資訊與快取儲存在本機。應用程式根據功能向你設定的服務、TMDB 和 GitHub 請求資料；GitHub 榜單設定與更新請求不攜帶 TMDB API Key 或 Emby 登入憑證。
 
-回報時可在「連結與設定 → 關於應用」點「匯出診斷資訊」，附上產生的 `.txt` 檔案、操作步驟及錯誤截圖。診斷檔案彙整版本、設定概況、快取與同步狀態、最近錯誤、更新診斷，以及最近最多 **10 次播放**的日誌（連續成功 Ping 合併彙整），不發起新的網路請求。
+遇到問題或有功能建議，歡迎透過 [GitHub Issues](https://github.com/ffinly/emby-companion/issues/new/choose) 選擇對應範本提交。
+
+回報問題時，可在「連結與設定 → 關於應用」點「匯出診斷資訊」，附上產生的 `.txt` 檔案、操作步驟及錯誤截圖。診斷檔案彙整版本、設定概況、快取與同步狀態、最近錯誤、更新診斷，以及最近最多 **10 次播放**的日誌（連續成功 Ping 合併彙整），不發起新的網路請求。
 
 診斷檔案自動隱藏伺服器位址、帳號、憑證、檔案路徑及作品編號，作品標題替換為同一檔案內一致的代號；文字跟隨匯出時的介面語言。應用程式內播放日誌及其獨立匯出仍保留真實標題，分享這些日誌或截圖前，請自行隱藏觀看內容與私人資訊。
 

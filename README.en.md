@@ -12,7 +12,7 @@ Emby Companion is a macOS app for finding your next movie or TV show. Explore cu
 
 **An Emby server is optional.** Add your own TMDB API Key to browse lists, explore 48 studios and platforms, search titles and people, and view ratings and overviews. Connect Emby and a subscription service whenever you need them.
 
-[Download Latest](https://github.com/ffinly/emby-companion/releases/latest) · [Release History](https://github.com/ffinly/emby-companion/releases) · [Report an Issue](https://github.com/ffinly/emby-companion/issues)
+[Download Latest](https://github.com/ffinly/emby-companion/releases/latest) · [SSPAI article (Chinese)](https://sspai.com/post/116958) · [Release History](https://github.com/ffinly/emby-companion/releases) · [Issues & Suggestions](https://github.com/ffinly/emby-companion/issues/new/choose)
 
 This repository provides releases, documentation, and issue tracking. The app is closed source and does not provide media, server accounts, or third-party credentials.
 
@@ -184,6 +184,8 @@ Backups may contain API keys and sign-in information. Keep the file and password
 ## Privacy and Feedback
 
 Connection information and caches are stored locally. Features send requests to your configured services, TMDB, and GitHub. GitHub list-definition and update requests do not include your TMDB API Key or Emby credentials.
+
+Report bugs or suggest features through [GitHub Issues](https://github.com/ffinly/emby-companion/issues/new/choose), choosing the appropriate template.
 
 When reporting issues, click “Export Diagnostics” under “Connections & Settings → About” and attach the generated `.txt` file, steps to reproduce, and an error screenshot. The file summarizes the version, configuration, cache and sync status, recent errors, update diagnostics, and logs from up to the **10 most recent playback sessions**, with consecutive successful pings summarized. Exporting makes no new network requests.
 
