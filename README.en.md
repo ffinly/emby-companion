@@ -155,7 +155,7 @@ Playback progress syncs automatically, with no switch to enable. **Close the pla
 
 Keep this app running during playback to maintain the Emby session and playback history. Closing this app’s window keeps heartbeats running; quitting this app or detecting that the player has exited stops them. Valid progress callbacks that arrive later can still be received.
 
-Open “Connections & Settings → Playback → View Playback Logs” to inspect player launches, heartbeats, callbacks, and synchronization. Filter, search, view records by playback request, or export `.log` files. Records and expanded ping details load automatically as you scroll. Successful pings are hidden by default and grouped in the full view. Logs stay on this device for up to seven days and 20,000 entries, excluding playback links and credentials.
+Open “Connections & Settings → Playback → View Playback Log” to inspect player launches, heartbeats, callbacks, and synchronization. Filter, search, view records by playback request, or export `.log` files. Records and expanded ping details load automatically as you scroll. Successful pings are hidden by default and grouped in the full view. Logs stay on this device for up to seven days and 20,000 entries, excluding playback links and credentials.
 
 ## Software Updates
 
