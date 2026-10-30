@@ -44,12 +44,18 @@ Screenshots show Liquid Glass on macOS 26 or later and automatically switch with
 
 *What to Watch: Find your next movie or TV show in Core Lists or your library.*
 
+## Use with Emby Collection Sync
+
+To automatically create list-based collections on your Emby server, pair the app with [Emby Collection Sync](https://github.com/ffinly/emby-collection-sync). The script synchronizes lists, organizes Emby collections, and optionally subscribes to missing content through MoviePilot.
+
+Emby Companion uses that project's preset list definitions. When connected to the same Emby server, it can also browse collections created by the script, check availability and missing episodes, play titles, and send manual subscription requests. Either project works independently, or you can combine them into a workflow from list organization to choosing and watching on your Mac.
+
 ## Main Features
 
 ### Discover Movies and TV
 
 - **What to Watch:** After connecting Emby, syncing your library, and completing its TMDB metadata, pick movies and TV shows from titles available in Core Lists or your entire library, with unwatched filtering, a full-screen poster wall, and independent light and dark appearance. Collection sync and metadata completion for titles outside your library do not block entry.
-- **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [emby-collection-sync](https://github.com/ffinly/emby-collection-sync/blob/main/README.en.md); import online lists through “Add TMDB List.”
+- **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [Emby Collection Sync](https://github.com/ffinly/emby-collection-sync/blob/main/README.en.md); import online lists through “Add TMDB List.”
 - **Studio discovery:** Explore titles from 48 studio and platform entries across Movie Studios, Animation Studios, Western TV, and Asian TV, with filters and library, watch, and subscription status.
 - **Search titles and people:** Search by title, person, collection name, or ID, including TMDB and IMDb IDs and title links. Leave the title blank to browse popular titles in the selected region. Explore taglines, overviews, ratings, credits, and filmographies. Expand a cast or crew member’s other library titles inline in details, or follow links to Douban, IMDb, and TMDB.
 - **Core List Coverage:** Includes tiers 1–3 by default. Select tiers or include and exclude individual lists, then save to update deduplicated statistics. The home page's total unique titles and in-library count still cover all lists. You can also choose which list opens from Home.
