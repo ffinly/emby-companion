@@ -48,13 +48,13 @@ Screenshots show Liquid Glass on macOS 26 or later and automatically switch with
 
 To automatically create list-based collections on your Emby server, pair the app with [Emby Collection Sync](https://github.com/ffinly/emby-collection-sync). The script synchronizes lists, organizes Emby collections, and optionally subscribes to missing content through MoviePilot.
 
-Emby Companion uses that project's preset list definitions. When connected to the same Emby server, it can also browse collections created by the script, check availability and missing episodes, play titles, and send manual subscription requests. Either project works independently, or you can combine them into a workflow from list organization to choosing and watching on your Mac.
+Emby Companion uses that project's preset list definitions. When connected to the same Emby server, it can check availability and missing episodes, play titles, and send manual subscription requests. In-app collections are automatically built from library movies using TMDB metadata; custom server collections are not displayed. Either project works independently, or you can combine them into a workflow from list organization to choosing and watching on your Mac.
 
 ## Main Features
 
 ### Discover Movies and TV
 
-- **What to Watch:** After connecting Emby, syncing your library, and completing its TMDB metadata, pick movies and TV shows from titles available in Core Lists or your entire library, with unwatched filtering, a full-screen poster wall, and independent light and dark appearance. Collection sync and metadata completion for titles outside your library do not block entry.
+- **What to Watch:** After connecting Emby, syncing your library, and completing its TMDB metadata, pick movies and TV shows from titles available in Core Lists or your entire library, with unwatched filtering, a full-screen poster wall, and independent light and dark appearance. Collection metadata updates and metadata completion for titles outside your library do not block entry.
 - **Discover through lists:** Browse IMDb, Douban, TMDB, festival, and award lists with rankings and library status. See which lists include a title from its details. Presets follow [Emby Collection Sync](https://github.com/ffinly/emby-collection-sync/blob/main/README.en.md); import online lists through “Add TMDB List.”
 - **Studio discovery:** Explore titles from 48 studio and platform entries across Movie Studios, Animation Studios, Western TV, and Asian TV, with filters and library, watch, and subscription status.
 - **Search titles and people:** Search by title, person, collection name, or ID, including TMDB and IMDb IDs and title links. Leave the title blank to browse popular titles in the selected region. Explore taglines, overviews, ratings, credits, and filmographies, with filters for acting, directing, writing, and other credit roles. Expand a cast or crew member’s other library titles inline in details, or follow links to Douban, IMDb, and TMDB.
@@ -63,7 +63,8 @@ Emby Companion uses that project's preset list definitions. When connected to th
 ### Your Library and Playback
 
 - **Home and Continue Watching:** Browse Emby libraries and resume the matching media version with your default player and route. Open the full view to see all entries.
-- **Browse your library:** Explore Emby movies, TV shows, collections, seasons, episodes, and playable versions. Filter movies, TV shows, or short films, and manage watch states. Right-click a playback version or episode to view file information and video, audio, and subtitle tracks. In Settings → Privacy, hide watch history and progress, or independently hide Libraries or Continue Watching on Home.
+- **Browse your library:** Explore Emby movies, TV shows, seasons, episodes, and playable versions. Filter movies, TV shows, or short films, and manage watch states. Right-click a playback version or episode to view file information and video, audio, and subtitle tracks. In Settings → Privacy, hide watch history and progress, or independently hide Libraries or Continue Watching on Home.
+- **TMDB collections:** Automatically build collections from library movies, browse complete movie lists, check collection completion and missing titles, and use filters, sorting and bulk subscriptions.
 - **Episode groups:** When groups are available, view the automatic recommendation or switch groups manually from the season menu in the series playback section. Episode titles and summaries follow the selected group; season and episode numbers and playback order stay the same.
 - **Check availability and missing episodes:** Use synchronized Emby data to check library status and check missing seasons and episodes against the current season arrangement or episode group, including missing episode numbers. Unchecked seasons and unknown totals are identified separately. Checking missing episodes works without MoviePilot; subscribing requires it.
 - **Multiple routes and external players:** Set separate synchronization and playback routes for the same Emby server, then choose a version to launch SenPlayer, Infuse, or VidHub with resume playback and progress callbacks. Matching parts share a version card and Continue Watching entry; select a `PART 1`, `DISC 2`, or other original file marker to resume, with the last-watched part selected by default and full filenames available on hover. Each part keeps its own progress; full-length versions still sync progress with one another.
@@ -178,9 +179,9 @@ Multilingual release notes follow the current interface language. Older notes av
 | TMDB API Settings | API address, image address, and API Key |
 | MoviePilot API Settings | Service address and API token |
 | TMDB Lists | List contents, custom lists, list settings, and core list selection |
-| TMDB Cache | Title, episode, person, and episode group metadata and images |
+| TMDB Cache | Title, collection, episode, person, and episode group metadata and images |
 | Emby Settings | Server, routes, current account, sign-in token, and watch history |
-| Emby Cache | Library, collections, episodes, episode group selections, and Emby images |
+| Emby Cache | Library, local collections, episodes, episode group selections, and Emby images |
 | Preferences | Language, appearance, playback and privacy preferences |
 
 Choose what to export, set a password of at least **eight characters**, and save the `.ecbackup` file. Components for unconfigured services cannot be selected. When importing, choose again from the components included in the backup: configuration, lists, and preferences replace corresponding data, while caches are merged. Core list selection is included with “TMDB Lists.” Watch history is included with “Emby Settings” for the current account only; restore checks the server and account and keeps newer records.
