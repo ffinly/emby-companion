@@ -112,27 +112,6 @@ When a text field has focus, arrow keys, Space, Return, and Esc retain their nor
 
 Requires **macOS 14 or later**. Universal packages support **Apple Silicon and Intel**. Download the DMG from the [latest Release](https://github.com/ffinly/emby-companion/releases/latest) and drag **Emby Companion.app** to Applications. Quit the old version before replacing it.
 
-### First Launch: macOS Security Prompts
-
-The current package is locally signed and has no Apple Developer ID signature or notarization. After confirming it came from this repository's Releases, try opening it once. If blocked, go to **System Settings → Privacy & Security → Open Anyway** and follow the prompts. See [Apple's guidance](https://support.apple.com/en-us/102445).
-
-<details>
-<summary>Alternative: use Terminal to address first-launch restrictions</summary>
-
-Use this only after confirming the package came from this repository's Releases and moving the app to Applications:
-
-```bash
-xattr -rd com.apple.quarantine "/Applications/Emby Companion.app"
-```
-
-If permission is denied, add `sudo` before the command.
-
-This command removes the app's download quarantine attribute; it cannot repair genuinely damaged files. If macOS explicitly reports malware, stop opening the app and report the exact message.
-
-</details>
-
-Later packages' signing status is listed in their Release notes.
-
 ### First-Time Setup
 
 On a fresh installation, Home shows “Quick Setup,” where you can configure the basics or restore a backup. Existing users can reopen it under “Connections & Settings → About → Quick Setup.”

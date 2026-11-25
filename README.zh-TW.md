@@ -112,27 +112,6 @@ Emby 觀影助手使用該專案的預置片單設定；連線同一 Emby 伺服
 
 需要 **macOS 14 或更新版本**，通用安裝包支援 **Apple Silicon 與 Intel**。從 [最新 Release](https://github.com/ffinly/emby-companion/releases/latest) 下載 DMG，將 **Emby Companion.app** 拖入「應用程式」；取代舊版前先結束應用程式。
 
-### 首次開啟：macOS 安全提示
-
-目前安裝包使用本機簽署，尚未經過 Apple Developer ID 簽署和公證。確認來源為本儲存庫 Releases 後，先嘗試開啟一次；如遭系統阻擋，前往 **系統設定 → 隱私權與安全性 → 強制打開**，依提示確認。參見 [Apple 官方說明](https://support.apple.com/zh-tw/102445)。
-
-<details>
-<summary>備用方法：透過終端機處理首次開啟限制</summary>
-
-僅在確認安裝包來自本儲存庫 Releases，並已將應用程式拖入「應用程式」後使用：
-
-```bash
-xattr -rd com.apple.quarantine "/Applications/Emby Companion.app"
-```
-
-若提示權限不足，可在指令前加上 `sudo`。
-
-此指令會移除應用程式的下載隔離屬性，無法修復真正損壞的檔案。若系統明確提示偵測到惡意軟體，請停止開啟並回報具體提示。
-
-</details>
-
-後續安裝包的簽署狀態以 Release 說明為準。
-
 ### 首次設定
 
 全新安裝後，首頁會顯示「快速設定」，可直接完成基本設定或從備份還原。已有設定的使用者可從「連結與設定 → 關於應用 → 快速設定」重新開啟。
