@@ -112,6 +112,14 @@ When a text field has focus, arrow keys, Space, Return, and Esc retain their nor
 
 Requires **macOS 14 or later**. Universal packages support **Apple Silicon and Intel**. Download the DMG from the [latest Release](https://github.com/ffinly/emby-companion/releases/latest) and drag **Emby Companion.app** to Applications. Quit the old version before replacing it.
 
+You can also install with [Homebrew](https://brew.sh/):
+
+```bash
+brew install --cask ffinly/tap/emby-companion
+```
+
+You can still check for and install updates from within the app.
+
 ### First-Time Setup
 
 On a fresh installation, Home shows “Quick Setup,” where you can configure the basics or restore a backup. Existing users can reopen it under “Connections & Settings → About → Quick Setup.”

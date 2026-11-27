@@ -112,6 +112,14 @@ Emby 觀影助手使用該專案的預置片單設定；連線同一 Emby 伺服
 
 需要 **macOS 14 或更新版本**，通用安裝包支援 **Apple Silicon 與 Intel**。從 [最新 Release](https://github.com/ffinly/emby-companion/releases/latest) 下載 DMG，將 **Emby Companion.app** 拖入「應用程式」；取代舊版前先結束應用程式。
 
+也可以透過 [Homebrew](https://brew.sh/) 安裝：
+
+```bash
+brew install --cask ffinly/tap/emby-companion
+```
+
+安裝後仍可在應用程式內檢查及安裝更新。
+
 ### 首次設定
 
 全新安裝後，首頁會顯示「快速設定」，可直接完成基本設定或從備份還原。已有設定的使用者可從「連結與設定 → 關於應用 → 快速設定」重新開啟。
