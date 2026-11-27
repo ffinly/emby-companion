@@ -2,7 +2,7 @@
 
 应用的专有许可不影响第三方组件按其原许可授予的权利。
 
-## Sparkle 2.10.0
+## Sparkle 2.10.1
 
 macOS 安装更新功能使用 [Sparkle](https://sparkle-project.org/)，遵循其 BSD 许可及随附第三方许可。以下为发布包所附许可全文。
 
@@ -150,9 +150,9 @@ TMDB 数据、图片和服务标识受其官方条款及各自权利人的权利
 
 IMDb 标识使用官方 [Brand Toolkit](https://brand.imdb.com/imdb) 中的素材；豆瓣标识来自其官方网站。上述标识仅用于识别跳转目标。
 
-## Nuke 13.0.0
+## Nuke 14.0.0
 
-图片加载使用 [Nuke](https://github.com/kean/Nuke)，遵循 MIT 许可。
+图片加载和动图播放使用 [Nuke 与 NukeUI](https://github.com/kean/Nuke)，遵循 MIT 许可。
 
 ```text
 The MIT License (MIT)
@@ -179,7 +179,7 @@ SOFTWARE.
 
 ```
 
-## phrase-pinyin-data
+## phrase-pinyin-data v0.20.1
 
 Offline phrase pronunciations use [phrase-pinyin-data](https://github.com/mozillazg/phrase-pinyin-data) under the MIT license. The bundled data contains a normalized subset of `pinyin.txt` with separately reviewed local contextual corrections.
 
