@@ -71,7 +71,7 @@ Emby Companion uses that project's preset list definitions. When connected to th
 
 ### Subscriptions, Caches, and Backups
 
-- **MoviePilot integration:** Subscribe to missing movies or incomplete seasons, skipping available movies, complete seasons, and existing subscriptions. Search and manage subscriptions individually or in batches. MoviePilot is optional and handles downloads and library imports.
+- **MoviePilot subscriptions:** Connect your own MoviePilot server to request movies missing from your library or seasons with missing episodes. Existing subscriptions are skipped automatically. You can search subscriptions and pause, resume, or cancel them in batches.
 - **Metadata and image caches:** List and library syncs automatically complete TMDB metadata in your selected language for country and genre filters and title details. Connecting Emby also enables caching of person and full-season episode metadata. Images load on demand. Inspect sync results, retry failures, manage caches, or rebuild the local search index. Automatically detect and repair polluted title and person names in the TMDB cache, or correct them manually.
 - **Backup and restore:** Choose configuration, lists, caches, and preferences for encrypted export and selective restore.
 
