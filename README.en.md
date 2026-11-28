@@ -73,6 +73,7 @@ Emby Companion uses that project's preset list definitions. When connected to th
 
 - **MoviePilot subscriptions:** Connect your own MoviePilot server to request movies missing from your library or seasons with missing episodes. Existing subscriptions are skipped automatically. You can search subscriptions and pause, resume, or cancel them in batches.
 - **Metadata and image caches:** List and library syncs automatically complete TMDB metadata in your selected language for country and genre filters and title details. Connecting Emby also enables caching of person and full-season episode metadata. Images load on demand. Inspect sync results, retry failures, manage caches, or rebuild the local search index. Automatically detect and repair polluted title and person names in the TMDB cache, or correct them manually.
+- **iCloud settings sync:** Use the same service connections, language settings, custom lists, core list selections, and manual name corrections on devices signed in to the same Apple Account.
 - **Backup and restore:** Choose configuration, lists, caches, and preferences for encrypted export and selective restore.
 
 ## Languages and Display
@@ -122,7 +123,7 @@ You can still check for and install updates from within the app.
 
 ### First-Time Setup
 
-On a fresh installation, Home shows “Quick Setup,” where you can configure the basics or restore a backup. Existing users can reopen it under “Connections & Settings → About → Quick Setup.”
+On a fresh installation, open Quick Setup from Home to configure services manually, explore the demo, restore a backup file, or choose iCloud Sync to restore saved settings. You’ll be asked to confirm before restoring. If your Mac and iCloud have different settings, you can choose which copy to keep. Existing users can reopen it under “Connections & Settings → About → Quick Setup.”
 
 1. **Configure TMDB API:** You can request your own API Key free for personal use. Expand “How to Get an API Key,” follow the steps to open [TMDB API settings](https://www.themoviedb.org/settings/api), read the [API terms](https://www.themoviedb.org/api-terms-of-use), enter the **32-character API Key (v3)**, and click “Test and Save.” Do not enter the longer API Read Access Token.
 2. **Configure Emby Server (optional):** Enter the server address, username, and password, then click “Sign In & Sync Emby.” Your library syncs in the background; Emby Premiere is not required. You can skip Emby and still browse lists, search, and explore studios.
@@ -161,6 +162,8 @@ Multilingual release notes follow the current interface language. Older notes av
 
 “Connections & Settings” provides cache cleanup, local search index rebuilding, and encrypted backups. Clearing local caches does not delete Emby server content. Connection and sign-in information remain, and you can synchronize again afterward. “TMDB Cache Cleanup” can clear search result caches separately while keeping lists, library metadata, and images.
 
+When moving to another device, use iCloud to carry over your settings. To transfer media caches or the current account’s watch history as well, select the corresponding items below when exporting an encrypted backup.
+
 | Backup Component | Included Data |
 | --- | --- |
 | TMDB API Settings | API address, image address, and API Key |
@@ -177,7 +180,9 @@ Backups may contain API keys and sign-in information. Keep the file and password
 
 ## Privacy and Feedback
 
-Connection information and caches are stored locally. Features send requests to your configured services, TMDB, and GitHub. GitHub list-definition and update requests do not include your TMDB API Key or Emby credentials.
+iCloud settings sync is on by default. Devices signed in to the same Apple Account can sync service connections, language settings, custom lists, core list selections, and manual name corrections. Connection credentials are encrypted in your private iCloud storage. Media caches and playback progress are excluded from iCloud sync. Progress reported by your player still syncs to Emby. In Connections & Settings → iCloud Sync, you can turn off sync or delete the cloud copy while keeping your local settings.
+
+Features send requests to your configured services, TMDB, and GitHub. GitHub list-definition and update requests do not include your TMDB API Key or Emby credentials.
 
 Report bugs or suggest features through [GitHub Issues](https://github.com/ffinly/emby-companion/issues/new/choose), choosing the appropriate template.
 
